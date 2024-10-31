@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+
+LABEL maintainer="udarizki2020@gmail.com"
+
+RUN apt-get update
+#jalankan perintah untuk container
+CMD [ "echo", "Ini dari container local saya 1" ]

@@ -1,0 +1,36 @@
+version: '3'
+services:
+  nginx1: #container
+      image: nginx
+      ports:
+        - "8080:80"
+      volumes:
+        - /Users/rizkiaimar/Data_Local/Mikroservices/MI3A/docker_volume/html1:/usr/share/nginx/html
+  nginx2: #container
+      image: nginx
+      ports:
+        - "8081:80"
+      volumes:
+        - /Users/rizkiaimar/Data_Local/Mikroservices/MI3A/docker_volume/html1:/usr/share/nginx/html
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: "coba20sept"
+      MYSQL_ROOT_PASSWORD: "12345678"
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - /Users/rizkiaimar/Data_Local/Mikroservices/MI3A/docker_volume/html1mysql_data:/var/lib/mysql
+    networks:
+      - network1
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - network1
+
+networks:
+  network1:
+    driver: bridge

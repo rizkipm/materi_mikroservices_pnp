@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+LABEL maintainer="udarizki2020@gmail.com"
+
+RUN apt-get update
+#buat folder
+WORKDIR /home/coba
+#jalankan perintah untuk container
+#kita buat sebuah file dengan nama file3.txt --> isi nya yg echo
+RUN echo "Halo saya dari container 3" > file3.txt
+CMD [ "echo", "Ini dari container local saya 3" ]

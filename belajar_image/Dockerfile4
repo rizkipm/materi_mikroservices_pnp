@@ -1,0 +1,15 @@
+#ambil based image dari ubuntu
+FROM ubuntu:20.04  
+LABEL maintainer="udarizki2020@gmail.com"
+#akan menjalankan perintah setelah perintah run
+#contoh RUN MKDIR coba : Perintah untuk membuat folder coba
+
+RUN apt-get update
+WORKDIR /home/coba
+#beda run dengan cmd
+#run : menjalankan image
+#cmd : ketika container dijalankan
+RUN echo "Halo saya dari container 4" > file3.txt
+#mengcopy dari sumber local kita ke container
+COPY folder4 /home/coba/
+CMD ["echo", "Halo dari container 4 ..."]

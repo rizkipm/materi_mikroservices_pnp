@@ -1,0 +1,11 @@
+#ngambil dari hub
+FROM ubuntu:20.04
+
+LABEL maintainer="udarizki2020@gmail.com"
+#run --> untuk menjalankan perintah image
+RUN apt-get update
+#untuk create direktor
+WORKDIR /home/coba
+RUN echo "Halo saya dari container 3" > file3.txt
+#perintah ketika container di jalankand
+CMD [ "echo", "Halo ini dari container local 2" ]

@@ -1,0 +1,8 @@
+#ngambil dari hub
+FROM ubuntu:20.04
+
+LABEL maintainer="udarizki2020@gmail.com"
+#run --> untuk menjalankan perintah image
+RUN apt-get update
+#perintah ketika container di jalankand
+CMD [ "echo", "Halo ini dari container local 2" ]

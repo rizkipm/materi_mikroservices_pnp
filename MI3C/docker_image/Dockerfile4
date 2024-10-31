@@ -1,0 +1,17 @@
+#based image dari ubuntuh ttps://hub.docker.com/_/ubuntu
+FROM ubuntu:20.04
+
+LABEL maintainer="udarizki2020@gmail.com"
+
+#run --> perintah ketika membuat image
+RUN apt-get update
+#kita bikin direktori didalam container
+WORKDIR /home/coba
+
+#kita buat file3.txt --> isinya adalah di dalam echo
+RUN echo "Halo ini saya dari container 4" > file3.txt
+#kita akan mencopy file dari local laptop ke container /home/coba
+COPY folder4 /home/coba/
+
+#cmd --> perintah ketika di jalankan sebagai container
+CMD [ "echo", "Hello ini dari container local" ]
